@@ -3,12 +3,22 @@ import React from 'react';
 class Ejercicio2 extends React.Component {
   constructor(props) {
     super(props);
+    this.state={listaChsites:[]};
+  }
+
+  async componentDidMount(){
+    const response = await fetch("https://v2.jokeapi.dev/joke/?lang=es&type=twopart&amount=3");
+    //la url es "https://v2.jokeapi.dev/joke/Programming?lang=es&type=twopart&amount=3", pero si la pongo me da error
+    const data = await response.json();
+    this.setState({listaChsites:data});
   }
 
   render() {
     return (
       <div id="ej2">
         <h2>Segunda Evaluación</h2>
+        <ol>
+          
         <ul>
           <li>
             Utiliza la API REST de chistes{' '}
@@ -58,7 +68,21 @@ class Ejercicio2 extends React.Component {
             jokeLanguages)<b> (1,5 puntos)</b>
           </li>
         </ul>
+      </ol>
+      
+
+<div>
+  <h1>LISTA DE CHISTES</h1>
+        <ul>
+      {this.state.listaChsites.map(
+        function GeneraElemento(item){
+        return<li>Chiste: {item.categories}</li>;
+      })}
+      </ul>
+
       </div>
+      </div>
+
     );
   }
 }
