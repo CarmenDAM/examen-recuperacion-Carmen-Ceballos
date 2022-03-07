@@ -1,8 +1,8 @@
 import React from 'react';
-import { Card, Container, Table, Row, Col, Accordion } from 'react-bootstrap';
+import { Accordion } from 'react-bootstrap';
 import uuid from 'react-uuid';
-import PaginaChistes from './components/PaginaChistes';
-import ListaIdiomas from './components/ListaIdiomas';
+import Formulario from './components/Formulario';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class Ejercicio2 extends React.Component {
   constructor(props) {
