@@ -1,7 +1,8 @@
 import React from 'react';
 import { Card, Container, Table, Row, Col, Accordion } from 'react-bootstrap';
 import uuid from 'react-uuid';
-import PaginaChistes from './PaginaChistes';
+import PaginaChistes from './components/PaginaChistes';
+import ListaIdiomas from './components/ListaIdiomas';
 
 class Ejercicio2 extends React.Component {
   constructor(props) {

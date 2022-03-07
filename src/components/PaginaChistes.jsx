@@ -2,8 +2,8 @@ import React from 'react';
 import uuid from 'react-uuid';
 import { Container, Table, Row, Col } from 'react-bootstrap';
 import { BASE_API_URL } from './Constants';
-import Boton from './Boton';
-import ListaIdiomas from 'ListaIdiomas';
+import Boton from './components/Boton';
+import ListaIdiomas from './components/ListaIdiomas';
 
 //Me he vasado en el examen anterior para este código, puesto que un
 //apartado también sacaba una lista de la API
@@ -18,6 +18,24 @@ class PaginaChistes extends React.Component {
     this.changeSelected = this.changeSelected.bind(this);
     this.updateTable = this.updateTable.bind(this);
     this.updateTableAPI = this.updateTableAPI.bind(this);
+
+//Lista desplegable de idiomas
+<Select
+    showSearch
+    onChange={(val) => {
+      this.onUpdatedState('idioma', val)
+    }}
+    className={styles.mixinControlSelect}
+    value={idioma}
+  >
+    <Option value="Czench">Czench</Option>
+    <Option value="German">German</Option>
+    <Option value="English">English</Option>
+    <Option value="Spanish">Spanish</Option>
+    <Option value="French">French</Option>
+    <Option value="Portuguese">Portuguese</Option>
+  </Select>
+
   }
 
   changeSelected = async (itemEndpoint) => {
@@ -49,6 +67,8 @@ class PaginaChistes extends React.Component {
     });
     this.changeSelected(parsedData[0].slug);
   }
+
+
   
 }
 export default PaginaChistes;

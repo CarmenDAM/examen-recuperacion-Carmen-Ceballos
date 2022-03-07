@@ -3,6 +3,7 @@ import { Row, Form } from 'react-bootstrap';
 import SelectMarcas from './components/SelectChiste';
 import Boton from './components/Boton';
 
+//Botón para seleccionar el idioma de la lista desplegable
 class Boton extends React.Component {
   constructor(props) {
     super(props);

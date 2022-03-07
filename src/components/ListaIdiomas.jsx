@@ -1,6 +1,7 @@
 import React from 'react'
 import { Menu, Dropdown } from 'antd';
   
+//Lista desplegable creada a mano con los idiomas de la API
 class ListaIdiomas extends Component {
   constructor(props) {
     super(props);    this.state = {
