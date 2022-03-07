@@ -4,7 +4,9 @@ import { Container, Table, Row, Col } from 'react-bootstrap';
 import { BASE_API_URL } from '../data/Constants';
 import './table.css';
 
-class PaginaMoviles extends React.Component {
+//Me he vasado en el examen anterior para este código, puesto que un
+//apartado también sacaba una lista de la API
+class PaginaChistes extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -47,3 +49,4 @@ class PaginaMoviles extends React.Component {
     this.changeSelected(parsedData[0].slug);
   };
 }
+export default PaginaChistes;
