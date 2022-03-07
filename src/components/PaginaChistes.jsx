@@ -2,6 +2,7 @@ import React from 'react';
 import uuid from 'react-uuid';
 import { Container, Table, Row, Col } from 'react-bootstrap';
 import { BASE_API_URL } from './Constants';
+import Boton from './Boton';
 
 //Me he vasado en el examen anterior para este código, puesto que un
 //apartado también sacaba una lista de la API
