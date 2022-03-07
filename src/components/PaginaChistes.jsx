@@ -68,7 +68,37 @@ class PaginaChistes extends React.Component {
     this.changeSelected(parsedData[0].slug);
   }
 
-
-  
+  //Otro intento de hacer la lista desplegable de idiomas
+  render() {
+    return (
+      <View style = {styles.container}>
+        <View style={styles.title_view}>
+          <Text style={styles.title_text}>
+          SectionList
+          </Text>
+        </View>
+        <View style={styles.list}>
+          <SectionList
+            sections = {[
+              {titulo: 'Czench'},
+              {titulo: 'German'},
+              {titulo: 'English'},
+              {titulo: 'French'},
+              {titulo: 'Portuguese'}
+            ]}
+            renderItem={({item}) =>
+              <Text style={styles.item}>{item}</Text>
+            }
+            renderSectionHeader = {({section})=>
+              <Text style={styles.sectionHeader}>{section.title}</Text>
+            }
+            keyExtractor = {(item,index) => index}
+          />
+        </View>
+      </View> 
+    );
+  };
 }
+  
+
 export default PaginaChistes;
