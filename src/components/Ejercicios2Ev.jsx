@@ -1,7 +1,7 @@
 import React from 'react';
-import Ejer2 from './Ejer2';
 import { Card, Container, Table, Row, Col, Accordion } from 'react-bootstrap';
 import uuid from 'react-uuid';
+import PaginaChistes from './PaginaChistes';
 
 class Ejercicio2 extends React.Component {
   constructor(props) {
@@ -84,7 +84,8 @@ class Ejercicio2 extends React.Component {
             </ul>
           );
         })}
-        <p>------------------------------------------------------</p>
+
+        <p>-----------------------------------------------------------------------------</p>
         <h2>Acordeón</h2>
         <Accordion defaultActiveKey="0">
           {this.state.Chistes.map((item) => {
@@ -96,6 +97,9 @@ class Ejercicio2 extends React.Component {
             );
           })}
         </Accordion>
+
+        <p>-----------------------------------------------------------------------------</p>
+      <h3>Lista Desplegable</h3>
       </div>
     );
   }
