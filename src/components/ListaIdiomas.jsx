@@ -1,5 +1,4 @@
 import React from 'react'
-import "antd/dist/antd.css";
 import { Menu, Dropdown } from 'antd';
   
 export default function ListaIdiomas() {
@@ -8,7 +7,7 @@ export default function ListaIdiomas() {
     <div style={{
       display: 'block', width: 700, padding: 30
     }}>
-      <h4>ReactJS Ant-Design Dropdown Component</h4>
+    
       <>
         <Dropdown
           overlay={(
