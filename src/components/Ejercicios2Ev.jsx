@@ -1,16 +1,29 @@
 import React from 'react';
 
+import Ejer2 from './Ejer2';
+
+import { Card, Container, Table, Row, Col, Accordion } from 'react-bootstrap';
+
+import uuid from 'react-uuid';
+
+
+
 class Ejercicio2 extends React.Component {
   constructor(props) {
     super(props);
-    this.state={listaChsites:[]};
+    this.state = {
+      Chsites: [],
+    };
   }
 
-  async componentDidMount(){
-    const response = await fetch("https://v2.jokeapi.dev/joke/?lang=es&type=twopart&amount=3");
-    //la url es "https://v2.jokeapi.dev/joke/Programming?lang=es&type=twopart&amount=3", pero si la pongo me da error
-    const data = await response.json();
-    this.setState({listaChsites:data});
+  async componentDidMount() {
+    fetch("https://v2.jokeapi.dev/joke/Programming?lang=es&type=twopart&amount=3")
+      .then((response) => response.json())
+      .then((data) =>
+        this.setState({
+          Chistes: data.jokes,
+        })
+      );
   }
 
   render() {
@@ -74,9 +87,9 @@ class Ejercicio2 extends React.Component {
 <div>
   <h1>LISTA DE CHISTES</h1>
         <ul>
-      {this.state.listaChsites.map(
+      {this.state.Chsites.map(
         function GeneraElemento(item){
-        return<li>Chiste: {item.categories}</li>;
+        return<li>Chiste: {item.setup}</li>;
       })}
       </ul>
 
