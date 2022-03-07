@@ -1,7 +1,7 @@
 import React from 'react';
 import uuid from 'react-uuid';
 import { Col, Form } from 'react-bootstrap';
-import { BASE_API_URL } from '../data/Constants';
+import { BASE_API_URL } from './data/Constants';
 
 class SelectIdioma extends React.Component {
   constructor(props) {

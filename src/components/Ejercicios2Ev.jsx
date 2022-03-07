@@ -1,7 +1,7 @@
 import React from 'react';
 import { Accordion } from 'react-bootstrap';
 import uuid from 'react-uuid';
-import Formulario from './components/Formulario';
+import Boton from './components/Boton';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 class Ejercicio2 extends React.Component {
@@ -100,7 +100,11 @@ class Ejercicio2 extends React.Component {
         </Accordion>
 
         <p>-----------------------------------------------------------------------------</p>
-      <h3>Lista Desplegable</h3>
+      <h3>Lista Desplegable (Manual)</h3>
+
+
+      <p>-----------------------------------------------------------------------------</p>
+      <h4>Lista Desplegable (Automatizada)</h4>
       </div>
     );
   }
