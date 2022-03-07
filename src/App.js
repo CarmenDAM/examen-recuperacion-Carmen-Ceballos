@@ -3,6 +3,7 @@ import './style.css';
 import Ejercicios1Ev from './components/Ejercicios1Ev';
 import Ejercicios2Ev from './components/Ejercicios2Ev';
 import './components/PaginaChistes';
+import axios from 'axios';
 
 function App() {
   return (
