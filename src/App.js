@@ -2,7 +2,7 @@ import React from 'react';
 import './style.css';
 import Ejercicios1Ev from './components/Ejercicios1Ev';
 import Ejercicios2Ev from './components/Ejercicios2Ev';
-
+import './components/PaginaChistes';
 
 function App() {
   return (
