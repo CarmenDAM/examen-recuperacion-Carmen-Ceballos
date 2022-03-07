@@ -1,21 +1,15 @@
 import React from 'react';
-
 import Ejer2 from './Ejer2';
-
 import { Card, Container, Table, Row, Col, Accordion } from 'react-bootstrap';
-
 import uuid from 'react-uuid';
-
-
 
 class Ejercicio2 extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      Chsites: [],
+      Chistes: [],
     };
   }
-
   async componentDidMount() {
     fetch("https://v2.jokeapi.dev/joke/Programming?lang=es&type=twopart&amount=3")
       .then((response) => response.json())
@@ -30,8 +24,6 @@ class Ejercicio2 extends React.Component {
     return (
       <div id="ej2">
         <h2>Segunda Evaluación</h2>
-        <ol>
-          
         <ul>
           <li>
             Utiliza la API REST de chistes{' '}
@@ -53,8 +45,9 @@ class Ejercicio2 extends React.Component {
             generar elementos{' '}
             <a href="https://react-bootstrap.github.io/components/accordion/">
               Accordion
-            </a> de React Bootstrap, de forma que<b> (3,5 puntos)</b>:
-            </li>
+            </a>{' '}
+            de React Bootstrap, de forma que<b> (3,5 puntos)</b>:
+          </li>
           <ul>
             <li>
               Cada elemento ha de tener una clave única generada con el
@@ -81,21 +74,29 @@ class Ejercicio2 extends React.Component {
             jokeLanguages)<b> (1,5 puntos)</b>
           </li>
         </ul>
-      </ol>
-      
-
-<div>
-  <h1>LISTA DE CHISTES</h1>
-        <ul>
-      {this.state.Chsites.map(
-        function GeneraElemento(item){
-        return<li>Chiste: {item.setup}</li>;
-      })}
-      </ul>
-
+        <h1>Lista de Chistes</h1>
+        {this.state.Chistes.map((item) => {
+          return (
+            <ul>
+              <li>
+                {item.setup} - {item.delivery}
+              </li>
+            </ul>
+          );
+        })}
+        <p>------------------------------------------------------</p>
+        <h2>Acordeón</h2>
+        <Accordion defaultActiveKey="0">
+          {this.state.Chistes.map((item) => {
+            return (
+              <Accordion.Item eventKey={uuid()}>
+                <Accordion.Header>{item.setup}</Accordion.Header>
+                <Accordion.Body>{item.delivery}</Accordion.Body>
+              </Accordion.Item>
+            );
+          })}
+        </Accordion>
       </div>
-      </div>
-
     );
   }
 }
